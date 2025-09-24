@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pariwisata Semarang</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Slideshow Background */
+    .slideshow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1.3s ease-in-out;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #00f; /* biru */
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-size: 3em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    h2 {
+      margin-top: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    p {
+      margin-top: 20px;
+      font-size: 1.2em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      font-size: 14px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body>
+  <!-- Slideshow Background -->
+  <div class="slideshow" id="slideshow"></div>
+
+  <!-- Navigasi -->
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="destinasi.html">Destinasi</a>
+    <a href="paket.html">Paket</a>
+    <a href="lokasi.html">Lokasi</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+
+  <h1>Pariwisata Semarang</h1>
+  <h2>Selamat Datang</h2>
+  <p>Temukan keindahan Semarang bersama kami.</p>
+
+  <footer>
+    © 2025 Pariwisata Semarang
+  </footer>
+
+  <script>
+    // Daftar gambar background (bisa ditambah sesuai kebutuhan)
+    const images = [
+      "lawang-sewu.jpg",
+      "sam-poo-kong.webp", 
+      "saloka.webp",
+      "candi-gedong-songo.jpg",
+      "dusun-semilir.jpeg",
+      "Taman-Bunga-Celosia.webp"
+      
+    ];
+
+    let index = 0;
+    const slideshow = document.getElementById("slideshow");
+
+    function changeBackground() {
+      slideshow.style.backgroundImage = `url(${images[index]})`;
+      index = (index + 1) % images.length;
+    }
+
+    // Set gambar awal
+    changeBackground();
+    // Ganti setiap 5 detik
+    setInterval(changeBackground, 5000);
+  </script>
+</body>
+</html>
+
+
